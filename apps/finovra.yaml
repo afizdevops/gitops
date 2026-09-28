@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/afizdevops/gitops.git
     targetRevision: main     # Branch, tag, or commit SHA to track
-    path: kustomize/overlays/dev 
+    path: k8s/plain-manifests #path to the manifests
     directory:
       recurse: true          # Pick up every service folder under this path
   destination:
