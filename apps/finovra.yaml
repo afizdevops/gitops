@@ -8,9 +8,11 @@ spec:
   source:
     repoURL: https://github.com/afizdevops/gitops.git
     targetRevision: main     # Branch, tag, or commit SHA to track
-    path: kustomize/overlays/dev  # test path to the manifests
-    directory:
-      recurse: true          # Pick up every service folder under this path
+    path: helm-chart
+    helm:
+      valueFiles:
+        - values-dev.yaml
+
   destination:
     server: https://kubernetes.default.svc   # "This same cluster" — ArgoCD's own cluster
     namespace: finovra        # Namespace to deploy into
